@@ -6,7 +6,7 @@
 /*   By: ebresser <ebresser@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:51:29 by ebresser          #+#    #+#             */
-/*   Updated: 2022/07/10 20:09:40 by ebresser         ###   ########.fr       */
+/*   Updated: 2022/07/10 20:13:33 by ebresser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	*routine(void *args)
 	{
 		while (status->input.num_of_times_eat > status->philo[i].num_of_times_ate
 			&& status->philo_dead == FALSE)
-			
 			routine_execute(status, i);
 	}
 	else
@@ -48,6 +47,8 @@ int	routine_execute(t_status *status, int i)
 		if (philo_think(status, i) == FALSE)
 			return (FALSE);
 	}
+	else
+		philo_print(status, status->philo[i].id, BOLD_ORANGE, SATIATED);
 	return (TRUE);
 }
 
