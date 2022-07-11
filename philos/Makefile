@@ -6,7 +6,7 @@
 #    By: ebresser <ebresser@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/10 16:38:44 by ebresser          #+#    #+#              #
-#    Updated: 2022/07/10 19:39:07 by ebresser         ###   ########.fr        #
+#    Updated: 2022/07/10 20:33:31 by ebresser         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC =	$(SRC_DIR)/actions.c \
 		$(SRC_DIR)/routines.c \
 		$(SRC_DIR)/set_input.c \
 		$(SRC_DIR)/time.c \
-		$(SRC_DIR)/utils.c
+		$(SRC_DIR)/utils_number.c \
+		$(SRC_DIR)/utils_str.c
 
 OBJ = $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRC))
 

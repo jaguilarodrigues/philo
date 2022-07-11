@@ -6,7 +6,7 @@
 /*   By: ebresser <ebresser@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 16:41:39 by ebresser          #+#    #+#             */
-/*   Updated: 2022/07/10 19:54:02 by ebresser         ###   ########.fr       */
+/*   Updated: 2022/07/10 20:43:51 by ebresser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@
 # define MANY_PHILOS "We don't need that many Ṕhilosophers. Put some back."
 # define ZERO_PHILOS "If no one is there to eat the spaghetti, does it exist?"
 
-
 /*
 ** Routines messages
 */
@@ -71,7 +70,6 @@
 /*
 ** Structures
 */
-
 typedef struct s_input //populada OK
 {
 	int				num_philo;
@@ -98,45 +96,45 @@ typedef struct s_status
 	long long		t0;
 	t_input			input;
 	t_philo			*philo;
-	pthread_t		adm; //orchestrator
+	pthread_t		adm;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	printer; //write
+	pthread_mutex_t	printer;
 }				t_status;
 
+int				philo_eat(t_status *status, int i);
+int				philo_sleep(t_status *status, int i);
+int				philo_think(t_status *status, int i);
+int				philo_is_dead(t_status *status, int *i);
+int				drop_forks(t_status *status, int i);
 
-int	philo_eat(t_status *status, int i);
-int	philo_sleep(t_status *status, int i);
-int	philo_think(t_status *status, int i);
-int	philo_is_dead(t_status *status, int *i);
-int	drop_forks(t_status *status, int i);
+int				create_forks(t_status *status);
 
-int	create_forks(t_status *status);
+int				create_philos(t_status *status);
+void			fill_philo_struct(t_status *status, int i, int j);
 
-int	create_philos(t_status *status);
-void	fill_philo_struct(t_status *status, int i, int j);
+int				create_threads(t_status *status);
+int				join_threads(t_status *status);
+int				destroy_mutex(t_status *status);
 
-int	create_threads(t_status *status);
-int	join_threads(t_status *status);
-int	destroy_mutex(t_status *status);
+int				input_errors(int argc, char **argv);
 
-int	input_errors(int argc, char **argv);
+void			*routine(void *args);
+int				routine_execute(t_status *status, int i);
+void			*checker(void *args);
+int				philo_print(t_status *status, int id, char *color, \
+							char *action);
 
-void	*routine(void *args);
-int	routine_execute(t_status *status, int i);
-void	*checker(void *args);
-int	philo_print(t_status *status, int id, char *color, char *action);
+void			set_input(int argc, char **argv, t_status *status);
 
-void set_input(int argc, char **argv, t_status *status);
-
-__uint64_t	now_ms(void);
+__uint64_t		now_ms(void);
 long long int	duration_ms(long long int simul_start);
-void	wait_ms(long long int time);
-long long	delta_time(long long time);
-void	exec_action(long long time);
+void			wait_ms(long long int time);
+long long		delta_time(long long time);
+void			exec_action(long long time);
 
-int	ft_atoi(const char *str);
+int				ft_atoi(const char *str);
 long long int	ft_atoll(char *str);
-int	ft_isdigit(int c);
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+int				ft_isdigit(int c);
+size_t			ft_strlcpy(char *dest, const char *src, size_t size);
 
 #endif

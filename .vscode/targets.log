@@ -2,13 +2,16 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.1
+ 
 # Built for x86_64-pc-linux-gnu
+ 
 # Copyright (C) 1988-2014 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sun Jul 10 19:39:24 2022
+# Make data base, printed on Sun Jul 10 20:34:46 2022
 
 # Variables
 
@@ -131,11 +134,11 @@ VSCODE_CLI = 1
 # environment
 VSCODE_CODE_CACHE_PATH = /home/li/.config/Code/CachedData/2d23c42a936db1c7b3b06f918cde29561cc47cd6
 # environment
+ 
 LOGNAME = li
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
- 
 +F = $(notdir $+)
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
@@ -243,7 +246,6 @@ LANG = C
 TERM = xterm-256color
 # environment
 VSCODE_PID = 9388
- 
 # variable set hash-table stats:
 # Load=115/1024=11%, Rehash=0, Collisions=17/137=12%
 
@@ -309,8 +311,9 @@ GNUmakefile:
 # current buf: size = 8162 B / used = 110 B / count = 13 / avg = 8 B
 
 # strcache performance: lookups = 16 / hit rate = 18%
+ 
 # hash-table stats:
 # Load=13/8192=0%, Rehash=0, Collisions=1/16=6%
-# Finished Make data base on Sun Jul 10 19:39:24 2022
+# Finished Make data base on Sun Jul 10 20:34:46 2022
 
  

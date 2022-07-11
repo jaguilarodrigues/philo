@@ -6,7 +6,7 @@
 /*   By: ebresser <ebresser@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:51:29 by ebresser          #+#    #+#             */
-/*   Updated: 2022/07/10 20:13:33 by ebresser         ###   ########.fr       */
+/*   Updated: 2022/07/10 20:37:25 by ebresser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 void	*routine(void *args)
 {
 	t_status	*status;
-	int		i;
+	int			i;
 
 	status = (t_status *)args;
 	i = status->n_thread;
 	if (status->input.num_of_times_eat > 0)
 	{
-		while (status->input.num_of_times_eat > status->philo[i].num_of_times_ate
+		while (status->input.num_of_times_eat > \
+			status->philo[i].num_of_times_ate \
 			&& status->philo_dead == FALSE)
 			routine_execute(status, i);
 	}
@@ -55,13 +56,14 @@ int	routine_execute(t_status *status, int i)
 void	*checker(void *args)
 {
 	t_status	*status;
-	int		i;
+	int			i;
 
 	status = (t_status *)args;
 	i = 0;
 	if (status->input.num_of_times_eat > 0)
 	{
-		while (status->input.num_of_times_eat > status->philo[i].num_of_times_ate
+		while (status->input.num_of_times_eat > \
+			status->philo[i].num_of_times_ate \
 			&& status->philo_dead == FALSE)
 		{
 			if (philo_is_dead(status, &i) == TRUE)

@@ -6,7 +6,7 @@
 /*   By: ebresser <ebresser@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 16:46:01 by ebresser          #+#    #+#             */
-/*   Updated: 2022/07/10 17:45:59 by ebresser         ###   ########.fr       */
+/*   Updated: 2022/07/10 20:38:39 by ebresser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	error_msg(char *msg)
 }
 
 static int	invalid_philo_number(int number)
-{	
+{
 	if (number > 200)
 	{
 		error_msg(MANY_PHILOS);
@@ -35,8 +35,7 @@ static int	invalid_philo_number(int number)
 		printf("The lone Philosopher starves to death...\n");
 		printf("\033[0m");
 		return (TRUE);
-	}
-	
+	}	
 	return (FALSE);
 }
 
@@ -103,4 +102,3 @@ int	input_errors(int argc, char **argv)
 		return (TRUE);
 	return (FALSE);
 }
-

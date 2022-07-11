@@ -6,7 +6,7 @@
 /*   By: ebresser <ebresser@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:32:19 by ebresser          #+#    #+#             */
-/*   Updated: 2022/07/10 18:33:17 by ebresser         ###   ########.fr       */
+/*   Updated: 2022/07/10 20:37:50 by ebresser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	create_forks(t_status *status)
 {
 	int	i;
 
-	status->forks = malloc(sizeof(pthread_mutex_t) * status->input.num_philo + 1);
+	status->forks = malloc(sizeof(pthread_mutex_t) * \
+		status->input.num_philo + 1);
 	if (status->forks == NULL)
 		return (FALSE);
 	i = 0;

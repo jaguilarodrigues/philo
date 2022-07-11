@@ -6,7 +6,7 @@
 /*   By: ebresser <ebresser@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 18:35:42 by ebresser          #+#    #+#             */
-/*   Updated: 2022/07/10 19:57:21 by ebresser         ###   ########.fr       */
+/*   Updated: 2022/07/10 20:40:10 by ebresser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ int	create_threads(t_status *status)
 				NULL, &routine, (void *) status) != 0)
 			return (FALSE);
 		i++;
-		usleep(1000); //deadlock?
+		usleep(1000);
 	}
 	if (pthread_create(&status->adm, NULL, &checker, (void *) status) != 0)
 		return (FALSE);
-	//usleep(1000);
 	if (join_threads(status) == FALSE)
 		return (FALSE);
 	return (TRUE);
@@ -53,8 +52,8 @@ int	join_threads(t_status *status)
 		return (FALSE);
 	return (TRUE);
 }
- 
-int	destroy_mutex(t_status *status) 
+
+int	destroy_mutex(t_status *status)
 {
 	int	i;
 
